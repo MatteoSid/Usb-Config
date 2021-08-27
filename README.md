@@ -3,10 +3,9 @@ Script per configurare l'indirizzo IP statico di un computer usando una chiavett
 
 Il programma viene eseguito all'avvio del computer e rimane in attesa fino a qunando viene collegata una chiavetta USB. 
 
-Quando la chiavetta viene collegata per prima cosa viene controllato se è presente il file config.json, un file di configurazione che serve a configurare l'indirizzo IP del computer e serve a definire gli indirizzi delle telecamere e del CN per il programma che gestisce le telecamere.
-Il file config.json è un file composto in questo modo:
+Quando la chiavetta viene collegata per prima cosa viene controllato se è presente il file config.json, un file di configurazione composto in questo modo:
 
-```
+```json
 [
   {
     "ip": "172.0.0.13",
@@ -29,8 +28,12 @@ Il file config.json è un file composto in questo modo:
   }
 ]
 ```
+
 I quattro blocchi fannno riferimento rispettivamente a.
-1. telecamera 1
-2. telecamera 2
-3. indirizzo del CN
-4. configurazione del PC
+
+1. telecamera 1;
+2. telecamera 2;
+3. indirizzo del CN;
+4. configurazione del PC.
+
+Per prima cosa il programma imposta l'indirizzo IP sul PC, poi copia il file **config.json** nel Desktop del PC per la configurazione del programma per le telecamere.
