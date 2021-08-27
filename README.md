@@ -1,5 +1,5 @@
 # Usb-config
-Script per configurare l'indirizzo IP statico di un computer usando una chiavetta contenente un file config.json.
+Script per configurare l'indirizzo IP statico di un computer usando una chiavetta contenente un file **config.json**.
 
 Il programma viene eseguito all'avvio del computer e rimane in attesa fino a qunando viene collegata una chiavetta USB. 
 
@@ -36,4 +36,4 @@ I quattro blocchi fannno riferimento rispettivamente a.
 3. indirizzo del CN;
 4. configurazione del PC.
 
-Per prima cosa il programma imposta l'indirizzo IP sul PC, poi copia il file **config.json** nel Desktop del PC per la configurazione del programma per le telecamere.
+Per prima cosa il programma imposta l'indirizzo IP sul PC, poi copia il file **config.json** nel Desktop del PC per la configurazione del programma per le telecamere e infine torna ad aspettare un altro collegamento con un dispositivo USB.
