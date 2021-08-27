@@ -8,23 +8,23 @@ Quando la chiavetta viene collegata per prima cosa viene controllato se è prese
 ```json
 [
   {
-    "ip": "172.0.0.13",
-    "login": "admin",
-    "password": "admin123"
+    "ip":           "172.0.0.13",
+    "login":        "admin",
+    "password":     "admin123"
   },
   {
-    "ip": "172.0.0.13",
-    "login": "admin",
-    "password": "admin123"
+    "ip":           "172.0.0.13",
+    "login":        "admin",
+    "password":     "admin123"
   },
   {
-    "ip": "172.0.0.11",
-    "port": 10000
+    "ip":           "172.0.0.11",
+    "port":         10000
   },
   {
-    "ip": "172.0.0.15",
-    "mask": "255.255.255.0",
-    "gateway": "172.0.0.1"
+    "ip":           "172.0.0.15",
+    "mask":         "255.255.255.0",
+    "gateway":      "172.0.0.1"
   }
 ]
 ```
