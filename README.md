@@ -1,4 +1,4 @@
-# Usb-config
+# Usb-Config
 Script per configurare l'indirizzo IP statico di un computer usando una chiavetta contenente un file **config.json**.
 
 Il programma viene eseguito all'avvio del computer e rimane in attesa fino a qunando viene collegata una chiavetta USB. 
