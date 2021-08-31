@@ -17,6 +17,15 @@ logging.basicConfig(format='[%(levelname)s][%(asctime)s]: %(message)s',
                     )
 logging.info('\n\n------------------------\nusb-config avviato.')
 
+print(
+    '''
+    USB-CONFIG
+
+    Inserire un supporto usb con il file config.json per la configurazione della rete e del 
+    software per la gestione delle telecamere.
+    '''
+)
+
 # funzione per caricare i dizionari presenti nel file
 def load_data(fname):
     with open(fname) as f:
@@ -38,6 +47,7 @@ def locate_usb():
     
 def timer():
     time.sleep(1800)
+
 t = Thread(target=timer)
 t.start()
 
@@ -68,10 +78,10 @@ try:
                     outputs = load_data(flag[0] + "config.json")
 
                     # divido il file di configurazione in 4 dizionari diversi
-                    camera1 = outputs[0]        # parametri per la camera 1 
-                    camera2 = outputs[1]        # parametri per la camera 2
-                    cn_config = outputs[2]      # parametri per la connessione con il CN
-                    pc_config = outputs[3]      # parametri di configurazione del PC
+                    camera1   = outputs[0]        # parametri per la camera 1 
+                    camera2   = outputs[1]        # parametri per la camera 2
+                    cn_config = outputs[2]        # parametri per la connessione con il CN
+                    pc_config = outputs[3]        # parametri di configurazione del PC
 
                     logging.info('Parametri file config.json:\n{}\n{}\n{}\n{}'.format(camera1, camera2, cn_config, pc_config))
 
@@ -88,12 +98,15 @@ try:
                     command = staticIP.split()
                     subprocess.run(command)
 
+                    if os.path.isfile(r'C:\Users\Parpas Matteo Donato\Desktop\config.json'):
+                        print('Sostituisco il file config.json esistente')
+                        os.remove(r'C:\Users\Parpas Matteo Donato\Desktop\config.json')
+
                     # dopo aver impostato il nuovo IP sul computer sposto il file config.json
                     # sul desktop perché poi servirà anche al programma per le telecamere
                     original = Path(flag[0] + "config.json")
                     #target = r'C:\Users\PARPAS\Desktop\config.json'
                     target = r'C:\Users\Parpas Matteo Donato\Desktop\config.json'
-
                     shutil.copyfile(original, target)
         
         if not t.is_alive():

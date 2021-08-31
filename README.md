@@ -1,9 +1,9 @@
 # Usb-Config
-Script per configurare l'indirizzo IP statico di un computer usando una chiavetta contenente un file **config.json**.
+Usb-Config è uno cript per configurare l'indirizzo IP statico di un computer usando una chiavetta contenente un file **config.json**.
 
-Il programma viene eseguito all'avvio del computer e rimane in attesa fino a qunando viene collegata una chiavetta USB. 
+Il programma viene eseguito all'avvio del computer e rimane in attesa per 30 minuti che un supporto usb venga collegato.
 
-Quando la chiavetta viene collegata per prima cosa viene controllato se è presente il file config.json, un file di configurazione composto in questo modo:
+Quando il supporto viene collegato per prima cosa viene controllato se è presente il file config.json, un file di configurazione composto in questo modo:
 
 ```json
 [
@@ -36,4 +36,7 @@ I quattro blocchi fannno riferimento rispettivamente a.
 3. indirizzo del CN;
 4. configurazione del PC.
 
-Per prima cosa il programma imposta l'indirizzo IP sul PC, poi copia il file **config.json** nel Desktop del PC per la configurazione del programma per le telecamere e infine torna ad aspettare un altro collegamento con un dispositivo USB.
+Per prima cosa il programma imposta l'indirizzo IP sul PC, poi copia il file **config.json** nel Desktop del PC per la configurazione del programma per le telecamere e infine torna ad aspettare un altro collegamento con un dispositivo USB (fino allo scadere dei 30 minuti)
+
+### Eseguibile
+Per eseguire **usb-config.py** viene usato un file batch che punta all'interprete di python che si vuole usare e al file python da eseguire. Il file batch viene eseguito tramite un collegamento con **permessi di amministrazione** creto in [questo modo](https://www.tenforums.com/tutorials/57690-create-elevated-shortcut-without-uac-prompt-windows-10-a.html). 
