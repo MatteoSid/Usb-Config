@@ -98,15 +98,15 @@ try:
                     command = staticIP.split()
                     subprocess.run(command)
 
-                    if os.path.isfile(r'C:\Users\Parpas Matteo Donato\Desktop\config.json'):
-                        print('Sostituisco il file config.json esistente')
-                        os.remove(r'C:\Users\Parpas Matteo Donato\Desktop\config.json')
-
                     # dopo aver impostato il nuovo IP sul computer sposto il file config.json
                     # sul desktop perché poi servirà anche al programma per le telecamere
                     original = Path(flag[0] + "config.json")
                     #target = r'C:\Users\PARPAS\Desktop\config.json'
                     target = r'C:\Users\Parpas Matteo Donato\Desktop\config.json'
+
+                    if os.path.isfile(target):
+                        print('Sostituisco il file config.json esistente')
+                        os.remove(target)
                     shutil.copyfile(original, target)
         
         if not t.is_alive():
@@ -117,3 +117,5 @@ try:
         time.sleep(1)
 except:
     logging.error('Error: {}. {}, line: {}'.format(sys.exc_info()[0], sys.exc_info()[1], sys.exc_info()[2].tb_lineno))
+
+    
